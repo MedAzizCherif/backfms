@@ -15,6 +15,7 @@ class CreateOffreTable extends Migration
     {
         Schema::create('offre', function (Blueprint $table) {
             $table->id();
+            $table->foreign('prospect')->references('id')->on('utilisateur');
             $table->timestamps();
         });
     }
